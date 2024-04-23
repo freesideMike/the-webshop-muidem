@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=B612+Mono&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+$primary-dark: black;
+$primary-light: rgba(245, 245, 245, 0.93); 
+$primary-color: rgba(100, 192, 97, 0.533);
+
+
+@mixin primary-font {
+  font-family: 'Roboto';
+  font-weight: 400;
+  color: #232323;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+body {
+  @include primary-font;
+  position: relative;
+}
+
+.MyCart{
+  font-size: 3rem;
+  text-align: center;
+}
+
+#carty {
+  background-color: $primary-light;
+}
+
+button{
+  padding: 2px 8px;
+  margin: 5px;
+  border-radius: 5px;
+  &:hover{
+    transform: scale(1.01);
+    filter: drop-shadow(0 0.20rem 0.2rem #292928aa);
+  }
+}
+.primaryButton {
+  background-color: $primary-color;
+}
+.secondaryButton {
+  background-color: $primary-light;
+}
+
+
+// HEADER  
+.material-symbols-outlined {
+  font-size: 6vh;
+}
+.icons {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 2vh;
+}
+
+#landingHeader{
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 1vh;
+}
+
+.imageContainer {
+height: 21vw;
+display: flex;
+justify-content: center;
+align-items: center;
+} 
+
+.hero-image {
+  object-fit: cover;
+  margin-bottom: 20px;
+  width: 120%;
+  filter: drop-shadow(0 0.80rem 0.5rem #6f520faa);
+  transform: scale(1);
+  transition: 1s;
+}
+.hero-image2{
+  opacity: 0.6;
+  min-width: 100vw;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: -1;
+  object-fit: cover;
+}
+
+// ------------------------------ Product-information ---------------------------------
+#productContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  max-width: 900px;
+  margin: auto;
+
+}
+
+#product {
+  background-color: $primary-light;
+  border-radius: 5px;
+  
+}
+
+.productItem {
+  padding: 20px;
+}
+
+
+.productImage{
+  max-width: 300px;
+  max-height: 300px;
+  object-fit: contain;
+  margin-right: 40px;
+  display: flex;
+  padding: 20px;
+}
+
+#productPop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.producdtButtonContainer{
+  position: relative;
+}
+
+// ------------------------------ nav-Bar ---------------------------------
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  margin-top: 0px;
+  height: 40px;
+}
+
+#logo {
+  height: 50px;
+  padding-bottom: 8px;
+  position: absolute;
+  margin: auto;
+  z-index: 1; 
+  top: 0%;
+  left: 0;
+  filter: drop-shadow(0 0.30rem 0.2rem #393838c9);
+}
+
+/* -------------------------------
+---- SHOPPING-CART-CONTAINER -----
+------------------------------- */
+
+.cartProducts {
+  color: $primary-dark;
+  height: auto;
+  max-height: 400px;
+  overflow-y: auto; 
+  position: absolute;
+  top: 40px;
+  right: 0;
+  border-radius:  30px ;
+  display: none;
+}
+
+.cart{
+  top: 11px;
+  position: absolute;;
+  margin-right: 40px;
+  font-size: 25px;
+  right: 9px;
+  cursor: pointer;
+}
+
+.badge{
+  width: 20px;
+  height: 17px;
+  right: 45px;
+  top: 2px;
+  text-align: center;
+  position: absolute;
+  color: white;
+  background-color: red;
+  border-radius: 50%;
+  align-items: center;
+  display: none;
+  font-size: 10px;
+}
+  
+//---------------------------------------LANDING CONTAINER--------------------------------
+.landingHeading-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+  
+.search {
+  width: 50vh;
+  height: 3vh;
+  border-radius: 10px;
+  margin-top: 1vh;
+}
+  
+    // --------------------- all the products on display --------------------------  
+.item-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: repeat() ;
+  margin-bottom: 200px;
+  flex-wrap: wrap;   
+}
+
+.image{
+  width: 150px;
+  height: 200px;
+  border-radius: 3px;
+}
+
+.item{
+  width: 250px;
+  height: 400px;
+  gap: 10px;
+  padding: 10px;
+  margin: 10px;
+  background-color: $primary-light;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 10px;
+  transition: 0.2s;
+  &:hover{
+    transform: scale(1.01);
+    filter: drop-shadow(0 0.20rem 0.2rem #292928aa);
+  }
+}
+    
+.title {
+  font-size: 15px;
+}
+
+.plus{
+color: green;
+cursor: pointer;
+padding: 5px 2px;
+
+}
+.minus{
+color: red;
+cursor: pointer;
+padding: 5px 16px;
+}
+
+.productDetail{
+display: flex;
+justify-content: flex-start;
+}
+
+#cart-container{
+  display: flex;
+}
+
+//Checkout 
+#checkoutPageContainer {
+  border: 1px solid rgb(111, 111, 111);
+  border-radius: 10px;
+  padding: 10px;
+  height: calc(100vh - 100px);
+  filter: drop-shadow(0rem 0rem 0.40rem #8a8382aa);
+  margin-bottom: 20px;
+  background-color: whitesmoke;
+  max-width: 900px;
+}
+
+#checkout {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 8vh;  
+}
+
+.checkoutListUl {
+  list-style: none;
+}
+//Formulär: 
+#purchase {
+  width: 40%;
+}
+
+#checkoutContainer{
+  font-size: 15px;
+  width: 60%;
+}
+
+#checkoutContainer h4{
+  font-size: 15px;
+  padding: 10px;
+  margin: 10px;
+  color: black;
+}
+
+#checkoutContainer span{
+  font-size: 15px;
+  padding: 10px;
+  margin: 10px;
+  color: black;
+}
+
+.containerForTotalPrice {
+  background-color: red;
+}
+
+/// Purchase pop up
+
+// grey background
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+}
+
+//rutan med text
+.openPop { 
+  z-index: 200;
+  display: flex;
+  border-radius: 10px;
+  padding: 50px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: $primary-light;
+  position: fixed;
+  left: 50%;
+  top: 50vh;
+  transform:translate(-50%, -50%);
+}
+
+.hidden{
+  display: none;
+  max-height: 0;
+}
+
+.purchasePopUpButton {
+  cursor: pointer;
+}
+
+#totalPriceLi {
+  font-weight: bold;
+}
+
+#totalPrice {
+    font-weight: bold;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.buttonCon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
